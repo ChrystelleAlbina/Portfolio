@@ -2,11 +2,18 @@ body {
   background-color: #e38de3;
   color: white;
   font-family: "Cinzel";
+  cursor: url(/image/cursor.png), auto;
+}
+
+.champs {
+  
+  height: auto;
+  border: solid 2px rgb(228, 87, 134);
 }
 
 h1 {
-  border: solid black 2px;
   background-color: #64a5e9;
+  border: solid 2px rgb(84, 84, 234);
   width: 100%;
 }
 .title {
@@ -20,61 +27,59 @@ h1 {
 .portfolio-item {
   position: absolute;
   top: 50%;
-  left: 55%;
+  left: 45%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 800px;
-  height: 100%;
+  max-width: 1200px;
+  height: 80%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 8px;
   padding: 20px;
   box-sizing: border-box;
 }
 
 .div1 {
-  grid-column-start: 2;
+  grid-column-start: 3;
   grid-row-start: 1;
 }
 
 .div2 {
-  grid-column-start: 6;
+  grid-column-start: 10;
   grid-row-start: 4;
 }
 
 .div3 {
-  grid-column-start: 6;
+  grid-column-start: 10;
   grid-row-start: 2;
 }
 
 .div4 {
-  grid-column-start: 3;
-  grid-row-start: 5;
+  grid-column-start: 1;
+  grid-row-start: 3;
 }
 
 /* Style des boutons */
 .portfolio-item button {
-  background-color: rgba(100, 165, 233, 0.8);
+  background-color: rgba(100, 164, 233, 0);
   color: white;
-  border: 2px solid black;
-  padding: 12px 20px;
   font-family: "Cinzel";
-  font-size: 16px;
+  font-size: 32px;
   font-weight: bold;
   border-radius: 50px;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
-  width: 80px;
-  height: 80px;
+  width: 2rem;
+  height: 2rem;
   min-height: 5px;
 }
 
 .portfolio-item button:hover {
-  background-color: rgba(227, 141, 227, 0.9);
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgb(244, 240, 111);
+  cursor: url(/image/cursor.png), auto;
 }
 
 .portfolio-item button:active {
