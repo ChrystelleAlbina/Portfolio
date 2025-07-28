@@ -1,0 +1,82 @@
+body {
+  background-color: #e38de3;
+  color: white;
+  font-family: "Cinzel";
+}
+
+h1 {
+  border: solid black 2px;
+  background-color: #64a5e9;
+  width: 100%;
+}
+.title {
+  text-align: center;
+  font-size: 32px;
+}
+.link {
+  text-align: center;
+}
+
+.portfolio-item {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.div1 {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.div2 {
+  grid-column-start: 6;
+  grid-row-start: 4;
+}
+
+.div3 {
+  grid-column-start: 6;
+  grid-row-start: 2;
+}
+
+.div4 {
+  grid-column-start: 3;
+  grid-row-start: 5;
+}
+
+/* Style des boutons */
+.portfolio-item button {
+  background-color: rgba(100, 165, 233, 0.8);
+  color: white;
+  border: 2px solid black;
+  padding: 12px 20px;
+  font-family: "Cinzel";
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  width: 80px;
+  height: 80px;
+  min-height: 5px;
+}
+
+.portfolio-item button:hover {
+  background-color: rgba(227, 141, 227, 0.9);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-item button:active {
+  transform: scale(0.95);
+}
