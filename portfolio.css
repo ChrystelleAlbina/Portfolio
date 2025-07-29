@@ -6,7 +6,6 @@ body {
 }
 
 .champs {
-  
   height: auto;
   border: solid 2px rgb(228, 87, 134);
 }
@@ -32,6 +31,7 @@ h1 {
   width: 100%;
   max-width: 1200px;
   height: 80%;
+  list-style: none;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -40,48 +40,217 @@ h1 {
   box-sizing: border-box;
 }
 
-.div1 {
+.github {
   grid-column-start: 3;
   grid-row-start: 1;
 }
 
-.div2 {
+.cv {
   grid-column-start: 10;
   grid-row-start: 4;
 }
 
-.div3 {
+.portfolio {
   grid-column-start: 10;
   grid-row-start: 2;
 }
 
-.div4 {
+.moi {
   grid-column-start: 1;
   grid-row-start: 3;
 }
-
+.glitch {
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
 /* Style des boutons */
-.portfolio-item button {
+.portfolio-item a {
   background-color: rgba(100, 164, 233, 0);
   color: white;
   font-family: "Cinzel";
   font-size: 32px;
   font-weight: bold;
   border-radius: 50px;
+  cursor: url(/image/cursor.png), auto;
   /* cursor: pointer; */
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
-  width: 2rem;
-  height: 2rem;
-  min-height: 5px;
+  width: 5rem;
+  height: 5rem;
+  min-height: 20px;
+  text-decoration: none;
 }
 
-.portfolio-item button:hover {
+.portfolio-item a:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgb(244, 240, 111);
   cursor: url(/image/cursor.png), auto;
 }
 
-.portfolio-item button:active {
+.portfolio-item a:active {
+  transform: scale(0.95);
+}
+
+main {
+  color: blue;
+  font-size: 32px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Media queries pour mobile */
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .title h1 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .title h2 {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+
+  .portfolio-item {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+    align-items: center;
+  }
+
+  .portfolio-item a {
+    width: 80%;
+    max-width: 200px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+  }
+
+  .github,
+  .cv,
+  .portfolio,
+  .moi {
+    grid-column-start: auto;
+    grid-row-start: auto;
+  }
+
+  .champs img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .link {
+    padding: 20px 10px;
+  }
+
+  .link h2 {
+    font-size: 20px;
+  }
+
+  .link img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+  }
+
+  footer {
+    padding: 20px 10px;
+    font-size: 14px;
+  }
+}
+
+.github {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.cv {
+  grid-column-start: 10;
+  grid-row-start: 4;
+}
+
+.portfolio {
+  grid-column-start: 10;
+  grid-row-start: 2;
+}
+
+.moi {
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+/* Style des LIENS (changé de button à a) */
+.portfolio-item a {
+  background-color: rgba(100, 164, 233, 0);
+  color: white;
+  font-family: "Cinzel";
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: url(/image/cursor.png), auto;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  width: 2rem;
+  height: 2rem;
+  min-height: 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 16px;
+  }
+
+  .title h1 {
+    font-size: 20px;
+  }
+
+  .title h2 {
+    font-size: 16px;
+  }
+
+  .portfolio-item a {
+    width: 90%;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .champs img {
+    height: 150px;
+  }
+
+  .link h2 {
+    font-size: 18px;
+  }
+
+  .link img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.portfolio-item a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgb(244, 240, 111);
+  cursor: url(/image/cursor.png), auto;
+}
+
+.portfolio-item a:active {
   transform: scale(0.95);
 }
