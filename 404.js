@@ -169,3 +169,6 @@ class SakuraEffect {
 document.addEventListener("DOMContentLoaded", () => {
   new SakuraEffect();
 });
+
+
+

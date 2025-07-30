@@ -184,7 +184,7 @@ main {
 }
 
 .portfolio {
-  grid-column-start: 10;
+  grid-column-start: 9;
   grid-row-start: 2;
 }
 
@@ -303,4 +303,66 @@ main {
 .back-to-top:hover {
   opacity: 0.8;
   cursor: url(/image/cursor.png), auto;
+}
+
+
+
+/* sparkle */
+html,
+body,
+#app,
+.overlay {
+  height: 100%;
+}
+
+#app,
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#app {
+  transform-style: preserve-3d;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.overlay {
+  z-index: -1;
+}
+
+.star.fall {
+  animation: fall 1.25s ease-out forwards;
+  pointer-events: none;
+  z-index: 1000;
+}
+@keyframes fall {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(150px) scale(0.6) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(-50%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%) rotate(1deg);
+  }
+  50% {
+    transform: translate(-50%) rotate(-1deg);
+  }
+  75% {
+    transform: translate(-50%) rotate(1deg);
+  }
+  100% {
+    transform: translate(-50%) rotate(0deg);
+  }
 }
