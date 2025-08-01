@@ -6,6 +6,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   perspective: 400px; /*sparkle*/
+  cursor: url(/image/cursor.png), auto;
 }
 
 .chrystelle {
@@ -17,6 +18,7 @@ body {
   height: auto;
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(201, 55, 199, 0.71);
+  
 }
 
 .sakura-container {
@@ -39,7 +41,7 @@ body {
   background-size: contain;
   opacity: 0.9;
   pointer-events: auto;
-  cursor: pointer;
+  cursor: url(/image/cursor.png), auto;
   transition: transform 0.3s ease;
 }
 
@@ -70,8 +72,6 @@ body {
     height: 12px;
   }
 }
-
-
 
 .portfolio-item {
   display: flex;
