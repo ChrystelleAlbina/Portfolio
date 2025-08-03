@@ -5,8 +5,21 @@ html {
 body {
   background-color: #e38de3;
   color: white;
-  font-family: "Cinzel";
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
   cursor: url(/image/cursor.png), auto;
+  overflow-x: hidden;
+  
+}
+
+main {
+  color: white;
+  font-size: 1.8rem;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 60ch;
+  margin: auto;
+  word-wrap: break-word;
 }
 
 .champs {
@@ -22,7 +35,7 @@ h1 {
 
 .title {
   text-align: center;
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .link {
@@ -36,7 +49,7 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   height: 80%;
   list-style: none;
   display: grid;
@@ -49,30 +62,40 @@ h1 {
 
 .github {
   grid-column: 2;
-  grid-row: 5;
-}
-
-.cv {
-  grid-column: 2;
-  grid-row: 4;
+  grid-row: 7
 }
 
 .presentation {
   grid-column: 4;
-  grid-row: 3;
+  grid-row: 4;
 }
 
 .glitch {
   grid-column: 4;
-  grid-row: 7;
+  grid-row: 6;
 }
 
-/* Style des boutons */
+.cv {
+  grid-column: 2;
+  grid-row: 5;
+}
+
+.cv-header {
+  text-align: center;
+  background-color: #64a5e9;
+  border: solid 2px rgb(84, 84, 234);
+}
+
+#github h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
 .portfolio-item a {
   background-color: rgba(100, 164, 233, 0);
   color: white;
-  font-family: "Cinzel";
-  font-size: 32px;
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
   font-weight: bold;
   border-radius: 50px;
   cursor: url(/image/cursor.png), auto;
@@ -87,36 +110,13 @@ h1 {
 .portfolio-item a:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgb(244, 240, 111);
-  cursor: url(/image/cursor.png), auto;
 }
 
 .portfolio-item a:active {
   transform: scale(0.95);
 }
 
-main {
-  color: blue;
-  font-size: 32px;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* CV html */
-
-.cv {
-  border: solid 5px rgb(84, 84, 234);
-}
-.cv-header {
-  text-align: center;
-  background-color: #64a5e9;
-  border: solid 2px rgb(84, 84, 234);
-}
-
-#github h2 {
-  text-align: center;
-  margin: 20px 0;
-}
-/* retour en top */
+/* bouton retour haut */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -138,10 +138,9 @@ main {
 
 .back-to-top:hover {
   opacity: 0.8;
-  cursor: url(/image/cursor.png), auto;
 }
 
-/* sparkle */
+/* animation étoiles */
 html,
 body,
 #app,
@@ -179,7 +178,7 @@ body,
     opacity: 1;
   }
   100% {
-    transform: translateY(150px) scale(0.6) rotate(360deg);
+    transform: translateY(100px) scale(0.6) rotate(360deg);
     opacity: 0;
   }
 }
@@ -202,14 +201,13 @@ body,
   }
 }
 
-/* ======================================= */
-/*         RESPONSIVE DESIGN              */
-/* ======================================= */
+/* ====================== */
+/*     RESPONSIVE DESIGN  */
+/* ====================== */
 
-/* Tablettes (max-width: 768px) */
 @media (max-width: 768px) {
   .title {
-    font-size: 24px;
+    font-size: 1.5rem;
     padding: 15px;
   }
 
@@ -228,18 +226,10 @@ body,
     padding: 20px;
   }
 
-  .github,
-  .cv,
-  .presentation,
-  .glitch {
-    grid-column-start: auto;
-    grid-row-start: auto;
-  }
-
   .portfolio-item a {
     width: 100%;
     height: 60px;
-    font-size: 20px;
+    font-size: 1.25rem;
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -247,22 +237,14 @@ body,
   }
 
   main {
-    font-size: 24px;
+    font-size: 1.25rem;
     padding: 15px;
-  }
-
-  .back-to-top {
-    width: 45px;
-    height: 45px;
-    bottom: 20px;
-    right: 20px;
   }
 }
 
-/* Smartphones (max-width: 480px) */
 @media (max-width: 480px) {
   .title {
-    font-size: 20px;
+    font-size: 1.2rem;
     padding: 10px;
   }
 
@@ -274,12 +256,12 @@ body,
 
   .portfolio-item a {
     height: 50px;
-    font-size: 18px;
+    font-size: 1.1rem;
     border-radius: 25px;
   }
 
   main {
-    font-size: 20px;
+    font-size: 1.1rem;
     padding: 12px;
   }
 
@@ -290,48 +272,9 @@ body,
   .champs {
     border-width: 2px;
   }
-
-  .back-to-top {
-    width: 40px;
-    height: 40px;
-    bottom: 15px;
-    right: 15px;
-  }
 }
 
-/* Très petits écrans (max-width: 360px) */
-@media (max-width: 360px) {
-  .title {
-    font-size: 18px;
-    padding: 8px;
-  }
-
-  .portfolio-item {
-    width: 98%;
-    padding: 10px;
-    gap: 10px;
-  }
-
-  .portfolio-item a {
-    height: 45px;
-    font-size: 16px;
-    border-radius: 22px;
-  }
-
-  main {
-    font-size: 18px;
-    padding: 10px;
-  }
-
-  .back-to-top {
-    width: 35px;
-    height: 35px;
-    bottom: 12px;
-    right: 12px;
-  }
-}
-
-/* Mode paysage sur mobile */
+/* Petits écrans paysage */
 @media (max-height: 500px) and (orientation: landscape) {
   .portfolio-item {
     display: grid;
@@ -342,27 +285,27 @@ body,
 
   .portfolio-item a {
     height: 40px;
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
-/* Grands écrans (min-width: 1400px) */
+/* Grands écrans */
 @media (min-width: 1400px) {
   .portfolio-item {
     max-width: 1400px;
   }
 
   .title {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 
   .portfolio-item a {
-    font-size: 36px;
+    font-size: 2.25rem;
     width: 6rem;
     height: 6rem;
   }
 
   main {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 }
