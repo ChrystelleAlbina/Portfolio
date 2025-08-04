@@ -2,17 +2,33 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --color-bg: #e38de3;
+  --color-text: white;
+  --color-accent: #64a5e9;
+}
+
+body.dark-mode {
+  --color-bg: #111;
+  --color-text: #f0f0f0;
+  --color-accent: #8d93e3;
+}
+
+.dark-mode .champs {
+  filter: invert(1);
+}
 body {
-  background-color: #e38de3;
-  color: white;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   font-family: "Cinzel", serif;
   font-size: 1rem;
   cursor: url(/image/cursor.png), auto;
   overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 main {
-  color: white;
+  color: var(--color-text);
   font-size: 1.8rem;
   padding: 20px;
   box-sizing: border-box;
@@ -23,12 +39,12 @@ main {
 
 .champs {
   height: auto;
-  border: solid 3px rgb(228, 87, 134);
+  border: solid 3px var(--color-accent);
 }
 
 h1 {
-  background-color: #64a5e9;
-  border: solid 2px rgb(84, 84, 234);
+  background-color: var(--color-accent);
+  border: solid 2px var(--color-accent);
   width: 100%;
 }
 
@@ -81,17 +97,19 @@ h1 {
 
 .cv-header {
   text-align: center;
-  background-color: #4447e4;
-  border: solid 2px rgb(84, 84, 234);
+  background-color: var(--color-accent);
+  border: solid 2px var(--color-accent);
 }
+
 a.tel {
-  color: rgb(255, 255, 255);
+  color: var(--color-text);
   font-weight: bold;
   text-decoration: none;
   list-style: none;
 }
+
 a.tel:hover {
-  color: #e38de3;
+  color: var(--color-bg);
 }
 
 #github h2 {
@@ -101,7 +119,7 @@ a.tel:hover {
 
 .portfolio-item a {
   background-color: rgba(100, 164, 233, 0);
-  color: white;
+  color: var(--color-text);
   font-family: "Cinzel", serif;
   font-size: 2rem;
   font-weight: bold;
@@ -174,13 +192,13 @@ body,
   z-index: -1;
 }
 
-.star.fall {
+.star.fleet {
   animation: fall 1.25s ease-out forwards;
   pointer-events: none;
   z-index: -2;
 }
 
-@keyframes fall {
+@keyframes fleet {
   0% {
     transform: translateY(0) scale(1) rotate(0deg);
     opacity: 1;
@@ -316,4 +334,48 @@ body,
   main {
     font-size: 2.25rem;
   }
+}
+
+/* rain */
+/* ===== Effet de pluie en mode dark ===== */
+.rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.drop {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Activation uniquement en mode dark */
+body.dark-mode .rain {
+  display: block;
+}
+
+body:not(.dark-mode) .rain {
+  display: none;
 }
