@@ -11,11 +11,14 @@ html {
 body.dark-mode {
   --color-bg: #111;
   --color-text: #f0f0f0;
-  --color-accent: #8d93e3;
+  --color-accent: #080e61;
 }
 
 .dark-mode .champs {
   filter: invert(1);
+}
+#darkModeToggle {
+  border-radius: 50%;
 }
 body {
   background-color: var(--color-bg);
@@ -126,7 +129,7 @@ a.tel:hover {
   border-radius: 50px;
   cursor: url(/image/cursor.png), auto;
   transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
   width: 5rem;
   height: 5rem;
   min-height: 20px;
@@ -193,7 +196,7 @@ body,
 }
 
 .star.fleet {
-  animation: fall 1.25s ease-out forwards;
+  animation: fleet 0.5s ease-out forwards;
   pointer-events: none;
   z-index: -2;
 }
@@ -225,6 +228,15 @@ body,
   100% {
     transform: translate(-50%) rotate(0deg);
   }
+}
+
+#github a{
+  text-decoration: none;
+  text-align: center;
+  margin-inline-start: 10px;
+  box-shadow: #054890 0px 10px 10px;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 /* ====================== */

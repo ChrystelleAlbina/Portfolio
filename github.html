@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="video-text.css" />
+    <link rel="icon" href="image/favicon.png" type="image/png" sizes="32x32" />
+    <title>Vidéo dans le Texte - Chrystelle Albina</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <a
+        id="event"
+        href="https://projetevenement.netlify.app/"
+        target="_blank"
+        class="button-link"
+        >Evenement & Co</a
+      >
+
+      <a
+        id="ink"
+        href="https://inkpulse.netlify.app/"
+        target="_blank"
+        class="button-link"
+        >Ink Pulse</a
+      >
+      <a id="devine" href="" target="_blank" class="button-link"
+        >devine le nombre</a
+      >
+    </div>
+
+    <div class="link">
+      <h2 id="name">Chrystelle Albina</h2>
+
+      <a href="index.html"><img src="/image/accueil.webp" alt="" /></a>
+      <a href="https://github.com/ChrystelleALBINA" target="_blank"
+        ><img src="/image/github.png" alt="logo cliquable github"
+      /></a>
+      <a
+        href="https://www.linkedin.com/in/chrystelle-albina-8509a944/"
+        target="_blank"
+        ><img src="/image/linkedin .png" alt="logo cliquable linkedin"
+      /></a>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Portfolio Chrystelle Albina. All rights reserved.</p>
+    </footer>
+
+    <!-- Vidéo cachée pour l'arrière-plan -->
+    <video id="backgroundVideo" style="display: none;" autoplay muted loop>
+      <source src="Vidéo de @Rec1.1.7 WS sur Pexels: https://www.pexels.com/fr-fr/video/33142170/" type="video/mp4">
+    </video>
+
+    <canvas id="videoCanvas" style="display: none;"></canvas>
+  </body>
+
+  <script>
+    // Fonction pour capturer la vidéo et l'appliquer comme arrière-plan du texte
+    function setupVideoBackground() {
+      const video = document.getElementById('backgroundVideo');
+      const canvas = document.getElementById('videoCanvas');
+      const ctx = canvas.getContext('2d');
+      const nameElement = document.getElementById('name');
+
+      // Attendre que la vidéo soit chargée
+      video.addEventListener('loadeddata', function() {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        
+        function drawVideo() {
+          if (video.readyState === video.HAVE_ENOUGH_DATA) {
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Convertir le canvas en URL pour l'arrière-plan
+            const imageUrl = canvas.toDataURL('image/jpeg', 0.8);
+            
+            // Appliquer l'image comme arrière-plan du texte
+            nameElement.style.backgroundImage = `url(${imageUrl})`;
+            nameElement.style.backgroundSize = 'cover';
+            nameElement.style.backgroundPosition = 'center';
+            nameElement.style.backgroundClip = 'text';
+            nameElement.style.webkitBackgroundClip = 'text';
+            nameElement.style.color = 'transparent';
+          }
+          
+          requestAnimationFrame(drawVideo);
+        }
+        
+        drawVideo();
+      });
+
+      // Démarrer la vidéo
+      video.play();
+    }
+
+    // Initialiser quand la page est chargée
+    window.addEventListener('load', setupVideoBackground);
+  </script>
+</html>
