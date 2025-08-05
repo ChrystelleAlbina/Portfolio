@@ -5,13 +5,13 @@ body {
   place-items: center;
   background: radial-gradient(
     circle,
-    rgba(15, 22, 60, 0.411) 0%,
-    rgba(44, 15, 60, 0.411) 50%, 
+    rgba(162, 169, 211, 0.788) 0%,
+    rgba(185, 127, 216, 0.815) 50%,
     rgb(40, 85, 79) 100%
   );
 }
 
-button{
+button {
   background: none;
   border: none;
   padding: 0;
@@ -61,7 +61,7 @@ button{
   font-size: 4rem;
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.18);
+  text-shadow: 0 4px 4px rgba(129, 121, 121, 0.18);
   text-transform: uppercase;
   text-align: center;
   animation-name: name;
@@ -134,7 +134,6 @@ a {
   }
 }
 
-
 .container {
   display: flex;
   flex-direction: column;
@@ -167,7 +166,7 @@ footer p {
   #name {
     font-size: 2.5rem;
   }
-  
+
   .link h2 {
     margin: 15px 0;
     padding: 8px;
@@ -177,5 +176,256 @@ footer p {
 @media (max-width: 480px) {
   #name {
     font-size: 2rem;
+  }
+}
+/* Media Queries pour la responsivité complète */
+
+/* Écrans très larges */
+@media (min-width: 1400px) {
+  body {
+    padding: 30px;
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+
+  button {
+    font-size: calc(20vw + 0.5rem);
+  }
+
+  #name {
+    font-size: 5rem;
+  }
+
+  a {
+    font-size: 120px;
+  }
+
+  .link a {
+    font-size: 2.5rem;
+  }
+
+  footer p {
+    font-size: 3.5rem;
+  }
+}
+
+/* Écrans larges */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  body {
+    padding: 25px;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+    height: 100vh;
+  }
+
+  .container {
+    gap: 15px;
+  }
+
+  #name {
+    font-size: 2.5rem;
+  }
+
+  .link h2 {
+    margin: 15px 0;
+    padding: 8px;
+  }
+
+  a {
+    font-size: 80px;
+  }
+
+  button {
+    font-size: calc(16vw + 0.5rem);
+  }
+
+  .link a {
+    font-size: 1.8rem;
+  }
+
+  footer p {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    height: 100vh;
+  }
+
+  .container {
+    gap: 10px;
+  }
+
+  #name {
+    font-size: 2rem;
+  }
+
+  a {
+    font-size: 60px;
+  }
+
+  button {
+    font-size: calc(14vw + 0.5rem);
+  }
+
+  .link a {
+    font-size: 1.5rem;
+  }
+
+  footer p {
+    font-size: 2rem;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 360px) {
+  body {
+    padding: 8px;
+  }
+
+  #name {
+    font-size: 1.8rem;
+  }
+
+  a {
+    font-size: 50px;
+  }
+
+  button {
+    font-size: calc(12vw + 0.5rem);
+  }
+
+  .link a {
+    font-size: 1.3rem;
+  }
+
+  footer p {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mode paysage sur mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  body {
+    padding: 10px;
+    height: 100vh;
+  }
+
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #name {
+    font-size: 1.8rem;
+  }
+
+  a {
+    font-size: 50px;
+  }
+
+  button {
+    font-size: calc(10vw + 0.5rem);
+  }
+
+  .link {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .link h2 {
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 1.5rem;
+  }
+
+  .link a {
+    font-size: 1.2rem;
+  }
+
+  footer p {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mode paysage sur tablette */
+@media (min-height: 501px) and (max-height: 700px) and (orientation: landscape) {
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    gap: 12px;
+  }
+
+  #name {
+    font-size: 2.2rem;
+  }
+
+  a {
+    font-size: 70px;
+  }
+
+  button {
+    font-size: calc(12vw + 0.5rem);
+  }
+}
+
+/* Support pour les écrans haute densité */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .link a img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Support pour les préférences de réduction de mouvement */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mode sombre si supporté */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: radial-gradient(
+      circle,
+      rgba(5, 12, 40, 0.8) 0%,
+      rgba(24, 5, 40, 0.8) 50%,
+      rgb(20, 45, 39) 100%
+    );
+  }
+}
+
+/* Support pour les écrans tactiles */
+@media (hover: none) and (pointer: coarse) {
+  .link a img {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  button {
+    min-height: 44px;
   }
 }
