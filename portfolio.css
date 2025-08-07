@@ -5,7 +5,7 @@ html {
 :root {
   --color-bg: #e38de3;
   --color-text: white;
-  --color-accent: #64a5e9;
+  --color-accent: #2560a0b6;
 }
 
 body.dark-mode {
@@ -29,6 +29,13 @@ body {
   overflow-x: hidden;
   transition: background-color 0.3s, color 0.3s;
 }
+#presentation {
+  background-color: rgba(111, 0, 139, 0.568);
+  box-shadow: #370101 0px 0px 10px 5px;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
 
 main {
   color: var(--color-text);
@@ -42,12 +49,13 @@ main {
 
 .champs {
   height: auto;
-  border: solid 3px var(--color-accent);
+  box-shadow: #ff02b3 0px 0px 10px 5px;
 }
 
 h1 {
   background-color: var(--color-accent);
   border: solid 2px var(--color-accent);
+  box-shadow: #330456 0px 0px 10px 5px;
   width: 100%;
 }
 
@@ -60,48 +68,18 @@ h1 {
   text-align: center;
 }
 
-/* grid */
-/* .portfolio-item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1000px;
-  height: 80%;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-  gap: 1px;
-  padding: 10px;
-  box-sizing: border-box;
+.portfolio-item {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
 }
-
-.github {
-  grid-column: 2;
-  grid-row: 7;
-}
-
-.presentation {
-  grid-column: 4;
-  grid-row: 4;
-}
-
-.glitch {
-  grid-column: 4;
-  grid-row: 6;
-}
-
-.cv {
-  grid-column: 2;
-  grid-row: 5;
-} */
 
 .cv-header {
   text-align: center;
   background-color: var(--color-accent);
-  border: solid 2px var(--color-accent);
+  border-radius: 20px;
+  box-shadow: #083a61 0px 0px 10px 2px;
 }
 
 a.tel {
@@ -114,15 +92,15 @@ a.tel {
 a.tel:hover {
   color: var(--color-bg);
 }
-
-.portfolio-item {
-  display: flex;
-  justify-content: center;
-  gap: 6rem;
-  margin-top: 1rem;
+#cv {
+  background-color: slateblue;
+  box-shadow: #030636 0px 0px 10px 5px;
+  border-radius: 10px;
 }
 
 .portfolio-item a {
+  align-items: center; /* centrage vertical */
+  justify-content: center; /* centrage horizontal */
   color: var(--color-text);
   font-family: "Cinzel", serif;
   font-size: 2rem;
@@ -130,9 +108,6 @@ a.tel:hover {
   cursor: url(/image/cursor.png), auto;
   transition: all 0.3s ease;
   backdrop-filter: blur(2px);
-  width: 5rem;
-  height: 5rem;
-  min-height: 20px;
   text-decoration: none;
 }
 
