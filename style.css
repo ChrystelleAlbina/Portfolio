@@ -1,0 +1,186 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: #2d3436;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* Dark mode styles */
+body.darkModeToggle {
+    background: linear-gradient(135deg, #2d3436, #636e72);
+    color: #ddd;
+}
+
+/* App container */
+#app {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.theme-toggle img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+body.darkModeToggle .theme-toggle {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+body.darkModeToggle .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Star effects */
+.star {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+
+.star-1 {
+    filter: hue-rotate(0deg) brightness(1.2);
+}
+
+/* Star fall animation */
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.star.fall {
+    animation: fall 1.25s linear forwards;
+}
+
+/* Rain container */
+.rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    display: none;
+}
+
+/* Rain drops */
+.drop {
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to bottom, transparent, #74b9ff, transparent);
+    animation: rain-fall linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes rain-fall {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Dark mode rain visibility */
+body.darkModeToggle .rain {
+    display: block !important;
+}
+
+/* Content for demonstration */
+body::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 50px;
+        height: 50px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .theme-toggle img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .star {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* Additional visual enhancements */
+body {
+    cursor: crosshair;
+}
+
+body.darkModeToggle {
+    cursor: crosshair;
+}
+
+/* Smooth transitions for all elements */
+* {
+    transition: all 0.3s ease;
+}
