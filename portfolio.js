@@ -34,7 +34,7 @@ rainContainer.classList.add("rain");
 document.body.appendChild(rainContainer);
 
 function createRain() {
-  rainContainer.innerHTML = ""; // Nettoyer les gouttes
+  rainContainer.innerHTML = "";
   const numberOfDrops = 100;
 
   for (let i = 0; i < numberOfDrops; i++) {

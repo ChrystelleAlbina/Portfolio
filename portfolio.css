@@ -61,7 +61,7 @@ h1 {
 }
 
 /* grid */
-.portfolio-item {
+/* .portfolio-item {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -96,7 +96,7 @@ h1 {
 .cv {
   grid-column: 2;
   grid-row: 5;
-}
+} */
 
 .cv-header {
   text-align: center;
@@ -115,17 +115,17 @@ a.tel:hover {
   color: var(--color-bg);
 }
 
-#github h2 {
-  text-align: center;
-  margin: 20px 0;
+.portfolio-item {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  margin-top: 1rem;
 }
 
 .portfolio-item a {
-  background-color: rgba(100, 164, 233, 0);
   color: var(--color-text);
   font-family: "Cinzel", serif;
   font-size: 2rem;
-  font-weight: bold;
   border-radius: 50px;
   cursor: url(/image/cursor.png), auto;
   transition: all 0.3s ease;
@@ -230,18 +230,7 @@ body,
   }
 }
 
-#github a{
-  text-decoration: none;
-  text-align: center;
-  margin-inline-start: 10px;
-  box-shadow: #054890 0px 10px 10px;
-  /* display: flex;
-  flex-direction: column; */
-}
-
-/* ====================== */
 /*     RESPONSIVE DESIGN  */
-/* ====================== */
 
 @media (max-width: 768px) {
   .title {
@@ -348,8 +337,8 @@ body,
   }
 }
 
-/* rain */
-/* ===== Effet de pluie en mode dark ===== */
+/* rain 
+===== Effet de pluie en mode dark ===== */
 .rain {
   position: fixed;
   top: 0;
