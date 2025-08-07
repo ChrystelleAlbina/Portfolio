@@ -1,6 +1,6 @@
 // ✨ Sparkle effect (mode clair uniquement)
 const root = document.getElementById("app");
-const urls = ["/image/P2.svg"];
+const urls = ["image/P2.svg"];
 const classes = ["star-1"];
 let sparkleEnabled = true;
 
@@ -64,11 +64,11 @@ const toggleImg = toggle.querySelector("img");
 function applyTheme(theme) {
   if (theme === "dark") {
     document.body.classList.add("dark-mode");
-    toggleImg.src = "/image/light.webp";
+    toggleImg.src = "image/light.webp";
     toggleImg.alt = "Passer en mode clair";
   } else {
     document.body.classList.remove("dark-mode");
-    toggleImg.src = "/image/dark.webp";
+    toggleImg.src = "image/dark.webp";
     toggleImg.alt = "Passer en mode sombre";
   }
 
@@ -77,10 +77,10 @@ function applyTheme(theme) {
 }
 
 toggle.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark-mode");
-  const theme = isDark ? "dark" : "light";
-  localStorage.setItem("theme", theme);
-  applyTheme(theme);
+  const currentlyDark = document.body.classList.contains("dark-mode");
+  const newTheme = currentlyDark ? "light" : "dark";
+  localStorage.setItem("theme", newTheme);
+  applyTheme(newTheme);
 });
 
 window.addEventListener("DOMContentLoaded", () => {
