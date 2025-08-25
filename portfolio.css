@@ -104,7 +104,6 @@ a.tel:hover {
   color: var(--color-text);
   font-family: "Cinzel", serif;
   font-size: 2rem;
-  border-radius: 50px;
   cursor: url(/image/cursor.png), auto;
   transition: all 0.3s ease;
   backdrop-filter: blur(2px);
