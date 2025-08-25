@@ -3,13 +3,13 @@ html {
 }
 
 :root {
-  --color-bg: #e38de3;
+  --color-bg: #1f004ef2;
   --color-text: white;
-  --color-accent: #2560a0b6;
+  --color-accent: #9e0acbfb;
 }
 
 body.dark-mode {
-  --color-bg: #111;
+  --color-bg: #030347;
   --color-text: #f0f0f0;
   --color-accent: #080e61;
 }
@@ -30,8 +30,8 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 #presentation {
-  background-color: rgba(111, 0, 139, 0.568);
-  box-shadow: #370101 0px 0px 10px 5px;
+  background-color: rgba(197, 8, 244, 0.758);
+  box-shadow: #bc96d6 0px 0px 10px 5px;
   border-radius: 10px;
   padding: 1rem;
   margin-bottom: 4rem;
@@ -47,15 +47,15 @@ main {
   word-wrap: break-word;
 }
 
-.champs {
+/* .champs {
   height: auto;
-  box-shadow: #ff02b3 0px 0px 10px 5px;
-}
+  box-shadow: #ff02ee 0px 0px 10px 5px;
+} */
 
 h1 {
   background-color: var(--color-accent);
   border: solid 2px var(--color-accent);
-  box-shadow: #330456 0px 0px 10px 5px;
+  box-shadow: #a492b1 0px 0px 10px 5px;
   width: 100%;
 }
 
@@ -71,15 +71,20 @@ h1 {
 .portfolio-item {
   display: flex;
   justify-content: center;
-  gap: 4rem;
-  margin-top: 3rem;
+  align-items: center;
+  gap: 6rem;
+  margin: 3rem auto;
 }
 
 .cv-header {
   text-align: center;
   background-color: var(--color-accent);
   border-radius: 20px;
-  box-shadow: #083a61 0px 0px 10px 2px;
+  box-shadow: #fcfafc 0px 0px 10px 2px;
+}
+
+h2 {
+  text-decoration: underline overline #e509d6;
 }
 
 a.tel {
@@ -93,17 +98,17 @@ a.tel:hover {
   color: var(--color-bg);
 }
 #cv {
-  background-color: slateblue;
-  box-shadow: #030636 0px 0px 10px 5px;
+  background-color: rgba(69, 45, 222, 0.774);
+  box-shadow: #6d71a0 0px 0px 10px 5px;
   border-radius: 10px;
 }
 
 .portfolio-item a {
-  align-items: center; /* centrage vertical */
-  justify-content: center; /* centrage horizontal */
+  text-align: center;
   color: var(--color-text);
   font-family: "Cinzel", serif;
   font-size: 2rem;
+  border-radius: 50px;
   cursor: url(/image/cursor.png), auto;
   transition: all 0.3s ease;
   backdrop-filter: blur(2px);
@@ -190,7 +195,7 @@ body,
   0% {
     transform: translate(-50%) rotate(0deg);
   }
-  25% {
+  /* 25% {
     transform: translate(-50%) rotate(1deg);
   }
   50% {
@@ -198,7 +203,7 @@ body,
   }
   75% {
     transform: translate(-50%) rotate(1deg);
-  }
+  } */
   100% {
     transform: translate(-50%) rotate(0deg);
   }
